@@ -1,10 +1,15 @@
 import smtplib
 
-def sendEmail():
+to = input("Enter the email address of the receiver :")
+
+message =input("Enter the message : ")
+
+def sendEmail(to,message):
     server = smtplib.SMTP('smtp.gmail.com',587)
     server.starttls()
-    server.login('predictorai2@gmail.com','obnl hojs ttqk cgza')
-    server.sendmail('predictorai2@gmail.com','alezjkqqlbvovzxzif@cazlp.com','testing email automation!')
+    server.login('your email','obnl hojs ttqk cgza')
+    server.sendmail('your email',to,message)
     server.close()
+    print("MESSAGE SUCCESSFULLY SENT!!!")
     
-sendEmail()
+sendEmail(to,message)
